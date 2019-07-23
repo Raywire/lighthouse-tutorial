@@ -26,6 +26,8 @@ Visit http://127.0.0.1:8000/graphql-playground on your browser to test the API
 
 Alternatively you can use Postman or Insomnia
 
+Use this url: http://localhost:8000/graphql
+
 ## Seeding the database
 First run
 ```php
@@ -37,7 +39,11 @@ factory('App\User',10)->create();
 factory('App\Post',50)->create();
 factory('App\Comment',50)->create();
 ```
-## Queries
+or simply
+```php
+composer seed
+```
+## Queries and Mutations
 
 ## Fetch a user
 ```
@@ -106,6 +112,20 @@ factory('App\Comment',50)->create();
       id
       reply
     }
+  }
+}
+```
+
+### Create a user
+```
+mutation {
+  createUser(
+    name: "Ryan Wire"
+    email: "simiyuwire@gmail.com"
+    password: "1234567"
+  ){
+    id,
+    name
   }
 }
 ```

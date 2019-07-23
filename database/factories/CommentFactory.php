@@ -5,6 +5,6 @@ use App\Post;
 $factory->define(Comment::class, function (Faker $faker) {
     return [
         'post_id' => factory(Post::class)->create()->id,
-        'reply' => $faker->paragraph
+        'reply' => $faker->text(200)
     ];
 });
