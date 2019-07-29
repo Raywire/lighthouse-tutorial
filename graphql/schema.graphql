@@ -9,6 +9,7 @@ type Query{
     user(id: ID @eq): User @find(model: "App\\User")
     posts: [Post!]! @all
     post (id: Int! @eq): Post @find
+    me: User @middleware(checks:["auth:api"]) @auth(model: "App\\User")
 }
 
 type User {
