@@ -28,6 +28,9 @@ Alternatively you can use Postman or Insomnia
 
 Use this url: http://localhost:8000/graphql
 
+## Heroku Link
+[Heroku](https://lighthouse-tutorial.herokuapp.com/)
+
 ## Seeding the database
 First run
 ```php
@@ -127,5 +130,17 @@ mutation {
     id,
     name
   }
+}
+```
+
+### Login a user
+```
+mutation {
+    login(data: {
+        username: "oberbrunner.reginald@example.net",
+        password: "password"
+    }) {
+        access_token
+    }
 }
 ```
